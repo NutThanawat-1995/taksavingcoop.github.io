@@ -447,6 +447,7 @@
       padding:17px;border-radius:14px;
       box-shadow:0 10px 28px rgba(15,35,64,.32);
       z-index:150;text-align:center;
+      border:none;cursor:pointer;width:calc(100% - 32px);
     }
   }
 
@@ -729,10 +730,10 @@
   </nav>
 </div>
 
-<a href="#login" class="mobile-login-fab" id="mobileLoginFab">
+<button type="button" class="mobile-login-fab" id="mobileLoginFab">
   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
-  เข้าสู่ระบบสมาชิก
-</a>
+  <span id="mobileLoginFabText">เข้าสู่ระบบสมาชิก</span>
+</button>
 <!-- HERO -->
 <section id="home" class="hero" style="padding:0;">
   <div class="wrap">
@@ -3141,11 +3142,29 @@
     });
   });
 
-  /* hide the floating "เข้าสู่ระบบ" button once the visitor is already
-     signed in — no need to keep prompting someone who's logged in */
+  /* the floating button always stays visible — its label and action
+     just adapt to whether the visitor is currently signed in, instead
+     of disappearing (which was confusing when a session was already
+     active, e.g. from earlier testing) */
   var fab = document.getElementById('mobileLoginFab');
+  var fabText = document.getElementById('mobileLoginFabText');
+  var fabIsLoggedIn = false;
+
   document.addEventListener('adminStatusResolved', function(e){
-    fab.style.display = e.detail.user ? 'none' : '';
+    fabIsLoggedIn = !!e.detail.user;
+    fabText.textContent = fabIsLoggedIn ? 'ดูข้อมูลของฉัน' : 'เข้าสู่ระบบสมาชิก';
+  });
+
+  fab.addEventListener('click', function(){
+    if(fabIsLoggedIn){
+      var el = document.getElementById('ledger');
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    } else {
+      var loginOverlay = document.getElementById('loginOverlay');
+      loginOverlay.classList.add('open');
+      loginOverlay.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
   });
 })();
 </script>
