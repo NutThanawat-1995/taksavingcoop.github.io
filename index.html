@@ -151,20 +151,18 @@
   .hero-emblem .seal img{width:100%;height:100%;object-fit:contain;}
 
   .stat-strip{
-    background:var(--cream);padding:56px 0;
+    background:var(--paper);border-top:1px solid var(--line);
   }
   .stat-strip .wrap{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    padding:0;
   }
   .stat-strip .cell{
-    border-radius:16px;padding:22px 20px;color:#fff;box-shadow:var(--shadow);
+    padding:26px 22px;border-right:1px solid var(--line);
   }
-  .stat-strip .cell:nth-child(1){background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));}
-  .stat-strip .cell:nth-child(2){background:linear-gradient(135deg,#1F7A54,#2F9A6B);}
-  .stat-strip .cell:nth-child(3){background:linear-gradient(135deg,#B8922F,#D2A93F);}
-  .stat-strip .cell:nth-child(4){background:linear-gradient(135deg,var(--navy-mid),#2E5C90);}
-  .stat-strip .num{font-family:'Kanit';font-weight:600;font-size:26px;color:#fff;}
-  .stat-strip .lbl{font-size:13.5px;color:rgba(255,255,255,.85);margin-top:4px;}
+  .stat-strip .cell:last-child{border-right:none;}
+  .stat-strip .num{font-family:'Kanit';font-weight:600;font-size:26px;color:var(--navy-deep);}
+  .stat-strip .lbl{font-size:13.5px;color:var(--ink-soft);margin-top:4px;}
 
   /* ===== Section shell ===== */
   section{padding:74px 0;}
@@ -183,23 +181,21 @@
     display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
   }
   .svc-card{
-    border-radius:16px;padding:26px 22px;box-shadow:var(--shadow);color:#fff;
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;
+    padding:26px 22px;box-shadow:var(--shadow);
   }
-  .svc-card.c-navy{background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));}
-  .svc-card.c-green{background:linear-gradient(135deg,#1F7A54,#2F9A6B);}
-  .svc-card.c-gold{background:linear-gradient(135deg,#B8922F,#D2A93F);}
   .svc-card .icon{
-    width:44px;height:44px;border-radius:9px;background:rgba(255,255,255,.18);
+    width:44px;height:44px;border-radius:9px;background:var(--navy-deep);
     display:flex;align-items:center;justify-content:center;margin-bottom:16px;
   }
-  .svc-card .icon svg{width:22px;height:22px;stroke:#fff;}
-  .svc-card h3{font-size:16.5px;font-weight:600;margin-bottom:8px;color:#fff;}
-  .svc-card p{font-size:14px;color:rgba(255,255,255,.82);margin:0;}
+  .svc-card .icon svg{width:22px;height:22px;stroke:var(--gold-light);}
+  .svc-card h3{font-size:16.5px;font-weight:600;margin-bottom:8px;}
+  .svc-card p{font-size:14px;color:var(--ink-soft);margin:0;}
   .svc-card .rate{
-    margin-top:14px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.3);
-    font-family:'Kanit';color:rgba(255,255,255,.9);font-weight:500;font-size:14.5px;
+    margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
+    font-family:'Kanit';color:var(--navy);font-weight:500;font-size:14.5px;
   }
-  .svc-card .rate b{color:#fff;font-size:17px;}
+  .svc-card .rate b{color:var(--gold);font-size:17px;}
 
   /* ===== Ledger / statement table ===== */
   .ledger-frame{
@@ -230,42 +226,6 @@
     white-space:nowrap;
   }
   .table-scroll{overflow-x:auto;}
-
-  /* ===== Admin member cards ===== */
-  .member-cards-grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-    gap:16px;padding:20px 24px;
-  }
-  .mc-card{
-    background:var(--paper);border:1px solid var(--line);border-radius:14px;
-    padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;
-  }
-  .mc-header{display:flex;align-items:center;gap:12px;}
-  .mc-avatar{
-    width:44px;height:44px;border-radius:50%;flex:none;
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Kanit';font-weight:600;color:#fff;font-size:16px;
-    background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));
-  }
-  .mc-info{min-width:0;flex:1;}
-  .mc-name{font-family:'Kanit';font-weight:600;font-size:14.5px;color:var(--navy-deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .mc-meta{font-size:12px;color:var(--ink-soft);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .mc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-  .mc-stat{border-radius:10px;padding:9px 8px;color:#fff;text-align:center;}
-  .mc-stat.c-navy{background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));}
-  .mc-stat.c-green{background:linear-gradient(135deg,#1F7A54,#2F9A6B);}
-  .mc-stat.c-gold{background:linear-gradient(135deg,#B8922F,#D2A93F);}
-  .mc-stat .lbl{font-size:10.5px;opacity:.9;}
-  .mc-stat .val{font-family:'Kanit';font-weight:600;font-size:13px;margin-top:2px;}
-  .mc-details{display:flex;flex-direction:column;gap:5px;font-size:12.5px;border-top:1px dashed var(--line);padding-top:10px;}
-  .mc-details .row{display:flex;justify-content:space-between;gap:8px;color:var(--ink-soft);}
-  .mc-details .row b{color:var(--ink);font-weight:500;text-align:right;}
-  .mc-actions{display:flex;gap:8px;}
-  .mc-actions button{
-    flex:1;border-radius:8px;padding:8px 6px;font-size:12.5px;cursor:pointer;font-family:'IBM Plex Sans Thai';
-  }
-  .mc-actions .edit-row-btn{background:transparent;border:1px solid var(--line);color:var(--navy);}
-  .mc-actions .delete-row-btn{background:transparent;border:1px solid #F0C9C7;color:#B3413B;}
 
   table.ledger{
     border-collapse:collapse;width:100%;min-width:1140px;font-size:13.5px;
@@ -306,12 +266,9 @@
     height:130px;background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));
     display:flex;align-items:center;justify-content:center;position:relative;
   }
-  .news-card .thumb.c-green{background:linear-gradient(135deg,#1F7A54,#2F9A6B);}
-  .news-card .thumb.c-gold{background:linear-gradient(135deg,#B8922F,#D2A93F);}
-  .news-card .thumb.c-navy2{background:linear-gradient(135deg,var(--navy-mid),#2E5C90);}
-  .news-card .thumb svg{width:38px;height:38px;stroke:#fff;opacity:.9;}
+  .news-card .thumb svg{width:38px;height:38px;stroke:var(--gold-light);opacity:.85;}
   .news-card .date{
-    position:absolute;top:10px;left:10px;background:rgba(255,255,255,.92);
+    position:absolute;top:10px;left:10px;background:var(--gold);
     color:var(--navy-deep);font-family:'Kanit';font-weight:600;font-size:12px;
     padding:4px 10px;border-radius:6px;
   }
@@ -329,19 +286,17 @@
   .board-band .section-head .kicker{color:var(--gold-light);}
   .board-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
   .board-card{
-    background:var(--paper);border:1px solid rgba(255,255,255,.12);
-    border-radius:16px;padding:22px 20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.18);
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;padding:20px;text-align:center;
   }
   .board-card .avatar{
     width:64px;height:64px;border-radius:50%;margin:0 auto 12px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
     display:flex;align-items:center;justify-content:center;
-    font-family:'Kanit';font-weight:600;color:#fff;font-size:20px;
+    font-family:'Kanit';font-weight:600;color:var(--navy-deep);font-size:20px;
   }
-  .board-card .avatar.c-navy{background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));}
-  .board-card .avatar.c-green{background:linear-gradient(135deg,#1F7A54,#2F9A6B);}
-  .board-card .avatar.c-gold{background:linear-gradient(135deg,#B8922F,#D2A93F);}
-  .board-card .nm{font-weight:600;font-size:14.5px;color:var(--navy-deep);}
-  .board-card .role{font-size:12.5px;color:var(--ink-soft);margin-top:4px;}
+  .board-card .nm{font-weight:600;font-size:14.5px;}
+  .board-card .role{font-size:12.5px;color:#AEB9CC;margin-top:4px;}
 
   /* ===== Contact ===== */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
@@ -820,25 +775,25 @@
       <p>ออกแบบมาให้เหมาะกับทุกช่วงชีวิตของข้าราชการตำรวจ ตั้งแต่ออมระยะยาวไปจนถึงเงินกู้ยามฉุกเฉิน</p>
     </div>
     <div class="services-grid">
-      <div class="svc-card c-navy">
+      <div class="svc-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 10h18M6 10v8M18 10v8M3 18h18M12 3l9 5H3l9-5Z"/></svg></div>
         <h3>หุ้นสหกรณ์</h3>
         <p>สะสมทุนเรือนหุ้นรายเดือน เป็นฐานสิทธิ์ในการกู้และรับเงินปันผลประจำปี</p>
         <div class="rate">ปันผลปีล่าสุด <b>5.25%</b></div>
       </div>
-      <div class="svc-card c-green">
+      <div class="svc-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>เงินฝากออมทรัพย์</h3>
         <p>ฝาก-ถอนได้ตามความสะดวก ดอกเบี้ยคำนวณรายวัน จ่ายทุกสิ้นปี</p>
         <div class="rate">ดอกเบี้ย <b>2.75% ต่อปี</b></div>
       </div>
-      <div class="svc-card c-gold">
+      <div class="svc-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 12l6 6L20 6"/></svg></div>
         <h3>เงินกู้สามัญ / ฉุกเฉิน</h3>
         <p>เงินกู้สามัญวงเงินสูงสำหรับแผนระยะยาว และเงินกู้ฉุกเฉินอนุมัติไว สำหรับเหตุจำเป็นเร่งด่วน</p>
         <div class="rate">ดอกเบี้ย <b>6.00% ต่อปี</b></div>
       </div>
-      <div class="svc-card c-navy">
+      <div class="svc-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4.5 4.5 8.5C19 16.65 12 21 12 21Z"/></svg></div>
         <h3>เงินกู้สวัสดิการ</h3>
         <p>สำหรับสมาชิกที่ต้องการเสริมสภาพคล่อง ดอกเบี้ยผ่อนปรน คำนวณตามอายุสมาชิก</p>
@@ -885,8 +840,37 @@
           <div class="login-msg" id="importMsg" style="width:100%;margin-top:10px;"></div>
         </div>
 
-        <div class="member-cards-grid" id="ledgerBody">
-          <div id="ledgerLoadingRow" style="grid-column:1/-1;text-align:center;padding:26px;color:var(--ink-soft);">กำลังโหลดข้อมูลสมาชิกจากฐานข้อมูล...</div>
+        <div class="table-scroll">
+          <table class="ledger">
+            <thead>
+              <tr class="grp">
+                <th colspan="4">ข้อมูลสมาชิก</th>
+                <th colspan="2">เงินออม</th>
+                <th colspan="4">ยอดเงินกู้คงเหลือ (บาท)</th>
+                <th colspan="3">อื่น ๆ</th>
+              </tr>
+              <tr class="sub">
+                <th>เดือน</th>
+                <th>รหัสสมาชิก</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>สังกัด</th>
+                <th>หุ้น (บาท)</th>
+                <th>เงินฝาก (บาท)</th>
+                <th>สามัญ</th>
+                <th>ฉุกเฉิน</th>
+                <th>สวัสดิการ</th>
+                <th>รวม</th>
+                <th>ผู้ค้ำประกัน</th>
+                <th>เงินปันผล (บาท)</th>
+                <th class="admin-only" style="display:none;">จัดการ</th>
+              </tr>
+            </thead>
+            <tbody id="ledgerBody">
+              <tr id="ledgerLoadingRow">
+                <td colspan="13" style="text-align:center;padding:26px;color:var(--ink-soft);">กำลังโหลดข้อมูลสมาชิกจากฐานข้อมูล...</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="ledger-foot">
           แสดง <span id="ledgerShown">0</span> จาก <span id="ledgerTotal">0</span> รายการ · ข้อมูลนี้ดึงจากฐานข้อมูล Firebase แบบเรียลไทม์ อัปเดตทุกครั้งที่มีการเพิ่ม/แก้ไขสมาชิก
@@ -926,7 +910,7 @@
               <div class="dash-tab-panel active" id="dashPanelHome">
                 <div class="dash-cards">
                   <div class="dash-card c-navy">
-                    <div class="ic">🪙</div>
+                    <div class="ic">💰</div>
                     <div class="lbl">ค่าหุ้นสะสม</div>
                     <div class="val dash-sensitive" data-raw="0">0 บาท</div>
                   </div>
@@ -2047,42 +2031,38 @@
 
   function renderRows(list){
     if(list.length === 0){
-      ledgerBody.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:26px;color:var(--ink-soft);">'
-        + 'ยังไม่มีข้อมูลสมาชิกในฐานข้อมูล — กด "+ เพิ่มสมาชิกใหม่" เพื่อเริ่มบันทึกข้อมูลจริง</div>';
+      ledgerBody.innerHTML = '<tr><td colspan="13" style="text-align:center;padding:26px;color:var(--ink-soft);">'
+        + 'ยังไม่มีข้อมูลสมาชิกในฐานข้อมูล — กด "+ เพิ่มสมาชิกใหม่" เพื่อเริ่มบันทึกข้อมูลจริง</td></tr>';
       ledgerShown.textContent = '0';
       return;
     }
     var html = '';
     list.forEach(function(m){
       var loanTotal = (Number(m.loanOrdinary)||0) + (Number(m.loanEmergency)||0) + (Number(m.loanWelfare)||0);
-      var initials = (m.fullName||'').trim().slice(0,1) || '?';
-      html += '<div class="mc-card">'
-        + '<div class="mc-header">'
-        + '<div class="mc-avatar">' + escapeHtml(initials) + '</div>'
-        + '<div class="mc-info">'
-        + '<div class="mc-name">' + escapeHtml(m.fullName) + '</div>'
-        + '<div class="mc-meta">' + escapeHtml(m.memberCode) + ' · ' + escapeHtml(m.department) + '</div>'
-        + '</div></div>'
-        + '<div class="mc-stats">'
-        + '<div class="mc-stat c-navy"><div class="lbl">หุ้น</div><div class="val">' + fmt(m.shares) + '</div></div>'
-        + '<div class="mc-stat c-green"><div class="lbl">เงินฝาก</div><div class="val">' + fmt(m.savings) + '</div></div>'
-        + '<div class="mc-stat c-gold"><div class="lbl">เงินกู้รวม</div><div class="val">' + fmt(loanTotal) + '</div></div>'
-        + '</div>'
-        + '<div class="mc-details">'
-        + '<div class="row"><span>เดือน</span><b>' + escapeHtml(m.month) + '</b></div>'
-        + '<div class="row"><span>เงินกู้สามัญ</span><b>' + fmt(m.loanOrdinary) + '</b></div>'
-        + '<div class="row"><span>เงินกู้ฉุกเฉิน</span><b>' + fmt(m.loanEmergency) + '</b></div>'
-        + '<div class="row"><span>เงินกู้สวัสดิการ</span><b>' + fmt(m.loanWelfare) + '</b></div>'
-        + '<div class="row"><span>เงินปันผล</span><b>' + fmt(m.dividend) + '</b></div>'
-        + '<div class="row"><span>ผู้ค้ำประกัน</span><b>' + (formatGuarantors(m) || '-') + '</b></div>'
-        + '</div>';
+      html += '<tr>'
+        + '<td class="center">' + escapeHtml(m.month) + '</td>'
+        + '<td class="center">' + escapeHtml(m.memberCode) + '</td>'
+        + '<td class="name">' + escapeHtml(m.fullName) + '</td>'
+        + '<td class="center">' + escapeHtml(m.department) + '</td>'
+        + '<td class="num">' + fmt(m.shares) + '</td>'
+        + '<td class="num">' + fmt(m.savings) + '</td>'
+        + '<td class="num">' + fmt(m.loanOrdinary) + '</td>'
+        + '<td class="num">' + fmt(m.loanEmergency) + '</td>'
+        + '<td class="num">' + fmt(m.loanWelfare) + '</td>'
+        + '<td class="num total">' + fmt(loanTotal) + '</td>'
+        + '<td class="center">' + (formatGuarantors(m) || '-') + '</td>'
+        + '<td class="num dividend">' + fmt(m.dividend) + '</td>';
       if(isCurrentUserAdmin){
-        html += '<div class="mc-actions">'
-          + '<button type="button" class="edit-row-btn" data-id="' + m.id + '">แก้ไข</button>'
-          + '<button type="button" class="delete-row-btn" data-id="' + m.id + '">ลบ</button>'
-          + '</div>';
+        html += '<td class="center" style="white-space:nowrap;">'
+          + '<button type="button" class="edit-row-btn" data-id="' + m.id + '" '
+          + 'style="background:transparent;border:1px solid var(--line);color:var(--navy);border-radius:7px;padding:6px 10px;font-size:12.5px;cursor:pointer;font-family:\'IBM Plex Sans Thai\';margin-right:6px;">แก้ไข</button>'
+          + '<button type="button" class="delete-row-btn" data-id="' + m.id + '" '
+          + 'style="background:transparent;border:1px solid #F0C9C7;color:#B3413B;border-radius:7px;padding:6px 10px;font-size:12.5px;cursor:pointer;font-family:\'IBM Plex Sans Thai\';">ลบ</button>'
+          + '</td>';
+      } else {
+        html += '<td class="center">-</td>';
       }
-      html += '</div>';
+      html += '</tr>';
     });
     ledgerBody.innerHTML = html;
     ledgerShown.textContent = String(list.length);
@@ -2164,8 +2144,8 @@
       }
     }, function(err){
       dbStatusTag.textContent = 'เชื่อมต่อฐานข้อมูลไม่สำเร็จ';
-      ledgerBody.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:26px;color:#B3413B;">'
-        + 'ไม่สามารถโหลดข้อมูลได้ กรุณาตรวจสอบการตั้งค่า Firestore Security Rules</div>';
+      ledgerBody.innerHTML = '<tr><td colspan="13" style="text-align:center;padding:26px;color:#B3413B;">'
+        + 'ไม่สามารถโหลดข้อมูลได้ กรุณาตรวจสอบการตั้งค่า Firestore Security Rules</td></tr>';
     });
   }
   function stopMembersListener(){
@@ -3163,13 +3143,6 @@
     'กิจกรรม': '<path d="M12 2v20M2 12h20"/>',
     'อื่นๆ': '<circle cx="12" cy="12" r="9"/>'
   };
-  var newsColors = {
-    'ประกาศ': 'c-navy2',
-    'รับสมัคร': 'c-green',
-    'รายงานประชุม': 'c-gold',
-    'กิจกรรม': '',
-    'อื่นๆ': 'c-green'
-  };
 
   function escapeHtml(s){
     return String(s||'').replace(/[&<>"']/g, function(c){
@@ -3186,9 +3159,8 @@
     var html = '';
     list.forEach(function(n){
       var iconPath = newsIcons[n.tag] || newsIcons['อื่นๆ'];
-      var colorCls = newsColors[n.tag] || '';
       html += '<div class="news-card">'
-        + '<div class="thumb ' + colorCls + '"><span class="date">' + escapeHtml(n.date) + '</span>'
+        + '<div class="thumb"><span class="date">' + escapeHtml(n.date) + '</span>'
         + '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6">' + iconPath + '</svg></div>'
         + '<div class="body">'
         + '<h4>' + escapeHtml(n.title) + '</h4>'
@@ -3295,10 +3267,9 @@
       return;
     }
     var html = '';
-    var boardColors = ['c-navy','c-green','c-gold'];
-    list.forEach(function(m, i){
+    list.forEach(function(m){
       html += '<div class="board-card">'
-        + '<div class="avatar ' + boardColors[i % 3] + '">' + escapeHtml(m.initials) + '</div>'
+        + '<div class="avatar">' + escapeHtml(m.initials) + '</div>'
         + '<div class="nm">' + escapeHtml(m.name) + '</div>'
         + '<div class="role">' + escapeHtml(m.role) + '</div>'
         + '</div>';
